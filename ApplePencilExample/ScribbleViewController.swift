@@ -17,6 +17,7 @@ class ScribbleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let scribbleInteraction = UIScribbleInteraction(delegate: self)
         scribbleTextField.addInteraction(scribbleInteraction)
         

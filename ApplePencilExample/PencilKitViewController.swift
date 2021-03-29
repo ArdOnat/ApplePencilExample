@@ -15,13 +15,7 @@ class PencilKitViewController: UIViewController {
     
     var toolPicker: PKToolPicker!
     
-    /// On iOS 14.0, this is no longer necessary as the finger vs pencil toggle is a global setting in the toolpicker
     var pencilFingerBarButtonItem: UIBarButtonItem!
-    
-    /// Hide the home indicator, as it will affect latency.
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +37,6 @@ class PencilKitViewController: UIViewController {
         canvasView.becomeFirstResponder()
         
         
-        // Before iOS 14, add a button to toggle finger drawing.
         if #available(iOS 14.0, *) { } else {
             pencilFingerBarButtonItem = UIBarButtonItem(title: "Enable Finger Drawing",
                                                         style: .plain,
@@ -57,12 +50,9 @@ class PencilKitViewController: UIViewController {
         self.view.addInteraction(pencilInteraction)
         pencilInteraction.delegate = self
         
-        
-        // Always show a back button.
         navigationItem.leftItemsSupplementBackButton = true
     }
     
-    /// Action method: Turn finger drawing on or off, but only on devices before iOS 14.0
     @IBAction func toggleFingerPencilDrawing(_ sender: Any) {
         if #available(iOS 14.0, *) { } else {
             canvasView.allowsFingerDrawing.toggle()
