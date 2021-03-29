@@ -23,17 +23,16 @@
                                 </constraints>
                                 <state key="normal" title="Scribble"/>
                                 <connections>
-                                    <action selector="scribbleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmr-Fj-Utd"/>
+                                    <segue destination="pKc-yV-kJx" kind="show" id="nKo-F3-G21"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-vK-LRJ">
-                                <rect key="frame" x="103.5" y="382" width="207" height="80"/>
+                                <rect key="frame" x="103.5" y="248" width="207" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="WFG-P1-cpW"/>
                                 </constraints>
                                 <state key="normal" title="PencilKit"/>
                                 <connections>
-                                    <action selector="pencilKitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WqV-MP-GwT"/>
                                     <segue destination="6HB-GK-o0K" kind="show" id="7X2-T8-hKZ"/>
                                 </connections>
                             </button>
@@ -43,7 +42,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZKr-SD-mZB" secondAttribute="bottom" constant="160" id="5D7-6C-ugu"/>
                             <constraint firstItem="ZKr-SD-mZB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DEL-BF-vJ6"/>
-                            <constraint firstItem="ZKr-SD-mZB" firstAttribute="top" secondItem="vRB-vK-LRJ" secondAttribute="bottom" constant="160" id="EYd-96-ZVm"/>
+                            <constraint firstItem="vRB-vK-LRJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="Js4-c9-Orr"/>
                             <constraint firstItem="vRB-vK-LRJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nZF-cP-84D"/>
                             <constraint firstItem="ZKr-SD-mZB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="v9r-ZP-Wdd"/>
                             <constraint firstItem="vRB-vK-LRJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="w5u-zb-qWD"/>
@@ -64,24 +63,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default iOS 14 Scribble Interaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E99-f7-z9H">
-                                <rect key="frame" x="16" y="60" width="382" height="21"/>
+                                <rect key="frame" x="16" y="104" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umy-gh-LVH">
-                                <rect key="frame" x="16" y="97" width="382" height="34"/>
+                                <rect key="frame" x="16" y="141" width="382" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text field with customized UIScribbleInteraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-Te-Yq4">
-                                <rect key="frame" x="16" y="163" width="382" height="21"/>
+                                <rect key="frame" x="16" y="207" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oli-Kz-p59">
-                                <rect key="frame" x="16" y="200" width="382" height="34"/>
+                                <rect key="frame" x="16" y="244" width="382" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="F7d-Nn-r77"/>
                                 </constraints>
@@ -89,18 +88,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIIndirectScribbleInteraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln2-2i-rUU">
-                                <rect key="frame" x="16" y="250" width="382" height="21"/>
+                                <rect key="frame" x="16" y="294" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" restorationIdentifier="IndirectScribbleTextView" translatesAutoresizingMaskIntoConstraints="NO" id="k46-dN-V4l">
-                                <rect key="frame" x="0.0" y="421" width="414" height="441"/>
+                                <rect key="frame" x="0.0" y="465" width="414" height="397"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="IndirectScribbleTextView"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OEG-z1-BxB">
-                                <rect key="frame" x="16" y="287" width="382" height="34"/>
+                                <rect key="frame" x="16" y="331" width="382" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="kJm-Qk-7iX"/>
                                 </constraints>
