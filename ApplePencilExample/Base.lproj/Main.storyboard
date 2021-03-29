@@ -1,24 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8bI-SD-6tL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ApplePencilExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKr-SD-mZB">
+                                <rect key="frame" x="103.5" y="622" width="207" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DIw-uu-Y9f"/>
+                                </constraints>
+                                <state key="normal" title="Scribble"/>
+                                <connections>
+                                    <action selector="scribbleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmr-Fj-Utd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-vK-LRJ">
+                                <rect key="frame" x="103.5" y="382" width="207" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="WFG-P1-cpW"/>
+                                </constraints>
+                                <state key="normal" title="PencilKit"/>
+                                <connections>
+                                    <action selector="pencilKitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WqV-MP-GwT"/>
+                                    <segue destination="6HB-GK-o0K" kind="show" id="7X2-T8-hKZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZKr-SD-mZB" secondAttribute="bottom" constant="160" id="5D7-6C-ugu"/>
+                            <constraint firstItem="ZKr-SD-mZB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DEL-BF-vJ6"/>
+                            <constraint firstItem="ZKr-SD-mZB" firstAttribute="top" secondItem="vRB-vK-LRJ" secondAttribute="bottom" constant="160" id="EYd-96-ZVm"/>
+                            <constraint firstItem="vRB-vK-LRJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nZF-cP-84D"/>
+                            <constraint firstItem="ZKr-SD-mZB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="v9r-ZP-Wdd"/>
+                            <constraint firstItem="vRB-vK-LRJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="w5u-zb-qWD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="v2G-ou-StQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-20.289855072463769" y="93.75"/>
+        </scene>
+        <!--Scribble View Controller-->
+        <scene sceneID="qJ8-eA-p4M">
+            <objects>
+                <viewController storyboardIdentifier="ScribbleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pKc-yV-kJx" customClass="ScribbleViewController" customModule="ApplePencilExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kHe-aC-4w9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default iOS 14 Scribble Interaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E99-f7-z9H">
+                                <rect key="frame" x="16" y="60" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umy-gh-LVH">
+                                <rect key="frame" x="16" y="97" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text field with customized UIScribbleInteraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-Te-Yq4">
+                                <rect key="frame" x="16" y="163" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oli-Kz-p59">
+                                <rect key="frame" x="16" y="200" width="382" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="F7d-Nn-r77"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIIndirectScribbleInteraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln2-2i-rUU">
+                                <rect key="frame" x="16" y="250" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" restorationIdentifier="IndirectScribbleTextView" translatesAutoresizingMaskIntoConstraints="NO" id="k46-dN-V4l">
+                                <rect key="frame" x="0.0" y="421" width="414" height="441"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="IndirectScribbleTextView"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OEG-z1-BxB">
+                                <rect key="frame" x="16" y="287" width="382" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="kJm-Qk-7iX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Trm-Sh-Tdo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="umy-gh-LVH" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" constant="16" id="3V5-y1-IvE"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="OEG-z1-BxB" secondAttribute="trailing" constant="16" id="3my-Qu-MWO"/>
+                            <constraint firstItem="oli-Kz-p59" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" constant="16" id="8jW-dP-wFi"/>
+                            <constraint firstItem="VOw-Te-Yq4" firstAttribute="top" secondItem="umy-gh-LVH" secondAttribute="bottom" constant="32" id="Aap-6D-8ky"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="E99-f7-z9H" secondAttribute="trailing" constant="16" id="H2d-Qb-Dvt"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="bottom" secondItem="k46-dN-V4l" secondAttribute="bottom" id="IwG-tD-JJE"/>
+                            <constraint firstItem="OEG-z1-BxB" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" constant="16" id="JmH-QE-SZK"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="oli-Kz-p59" secondAttribute="trailing" constant="16" id="K5C-wh-07X"/>
+                            <constraint firstItem="Ln2-2i-rUU" firstAttribute="top" secondItem="oli-Kz-p59" secondAttribute="bottom" constant="16" id="M4q-Xe-Nxf"/>
+                            <constraint firstItem="E99-f7-z9H" firstAttribute="top" secondItem="Trm-Sh-Tdo" secondAttribute="top" constant="16" id="Msq-bW-G6o"/>
+                            <constraint firstItem="k46-dN-V4l" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" id="OrZ-Tf-ali"/>
+                            <constraint firstItem="OEG-z1-BxB" firstAttribute="top" secondItem="Ln2-2i-rUU" secondAttribute="bottom" constant="16" id="SnJ-uy-ATA"/>
+                            <constraint firstItem="Ln2-2i-rUU" firstAttribute="leading" secondItem="kHe-aC-4w9" secondAttribute="leading" constant="16" id="Y3v-dh-F9G"/>
+                            <constraint firstItem="E99-f7-z9H" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" constant="16" id="ZMH-B8-yAL"/>
+                            <constraint firstItem="k46-dN-V4l" firstAttribute="top" secondItem="OEG-z1-BxB" secondAttribute="bottom" constant="100" id="Zgb-0P-WNH"/>
+                            <constraint firstItem="VOw-Te-Yq4" firstAttribute="leading" secondItem="Trm-Sh-Tdo" secondAttribute="leading" constant="16" id="cEq-rb-eGq"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="Ln2-2i-rUU" secondAttribute="trailing" constant="16" id="e41-9M-4La"/>
+                            <constraint firstItem="k46-dN-V4l" firstAttribute="trailing" secondItem="Trm-Sh-Tdo" secondAttribute="trailing" id="gcH-Cu-1JV"/>
+                            <constraint firstItem="umy-gh-LVH" firstAttribute="top" secondItem="E99-f7-z9H" secondAttribute="bottom" constant="16" id="idM-hb-Soc"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="VOw-Te-Yq4" secondAttribute="trailing" constant="16" id="jVs-i4-3d0"/>
+                            <constraint firstItem="Trm-Sh-Tdo" firstAttribute="trailing" secondItem="umy-gh-LVH" secondAttribute="trailing" constant="16" id="pvU-qH-qs5"/>
+                            <constraint firstItem="oli-Kz-p59" firstAttribute="top" secondItem="VOw-Te-Yq4" secondAttribute="bottom" constant="16" id="sA3-ht-V44"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mRK-TT-FiT"/>
+                    <connections>
+                        <outlet property="defaultTextField" destination="umy-gh-LVH" id="9nz-Db-Irk"/>
+                        <outlet property="heightConstraint" destination="F7d-Nn-r77" id="Ocw-C1-qtk"/>
+                        <outlet property="indirectScribbleTextField" destination="OEG-z1-BxB" id="9a3-hj-O4d"/>
+                        <outlet property="indirectScribbleView" destination="k46-dN-V4l" id="cyy-7y-8RK"/>
+                        <outlet property="scribbleTextField" destination="oli-Kz-p59" id="TDL-hh-Una"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dq-Y8-zVf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="94"/>
+        </scene>
+        <!--Pencil Kit Draw Navigation Controller-->
+        <scene sceneID="OOC-hq-Qf6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="8bI-SD-6tL" customClass="PencilKitDrawNavigationController" customModule="ApplePencilExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KfO-bH-6WE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aav-Uc-0a1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQQ-x0-enU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="94"/>
+        </scene>
+        <!--Pencil Kit View Controller-->
+        <scene sceneID="0qD-wc-Wjj">
+            <objects>
+                <viewController storyboardIdentifier="PencilKitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6HB-GK-o0K" customClass="PencilKitViewController" customModule="ApplePencilExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HBP-9Q-Oqf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHO-GT-V3s" customClass="PKCanvasView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rko-V7-PTk"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gHO-GT-V3s" firstAttribute="bottom" secondItem="HBP-9Q-Oqf" secondAttribute="bottom" id="019-0A-Su6"/>
+                            <constraint firstItem="gHO-GT-V3s" firstAttribute="trailing" secondItem="HBP-9Q-Oqf" secondAttribute="trailing" id="1vY-T5-uAA"/>
+                            <constraint firstItem="gHO-GT-V3s" firstAttribute="leading" secondItem="HBP-9Q-Oqf" secondAttribute="leading" id="cfK-aI-tEG"/>
+                            <constraint firstItem="gHO-GT-V3s" firstAttribute="top" secondItem="HBP-9Q-Oqf" secondAttribute="top" id="n66-m7-2mZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c2e-xN-mny"/>
+                    <connections>
+                        <outlet property="canvasView" destination="gHO-GT-V3s" id="M0q-Fe-l5d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tz5-u4-EDI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
