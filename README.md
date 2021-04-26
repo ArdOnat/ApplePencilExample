@@ -2,8 +2,6 @@
 
 This project covers 2 main subjects of Apple Pencil implementation into iOS apps.
 
-Sometimes you want numbered lists:
-
 1. Implementing [PencilKit](https://developer.apple.com/documentation/pencilkit), and using its' components.
 2. Implementing [Scribble](https://developer.apple.com/videos/play/wwdc2020/10106/) functionality.
 
